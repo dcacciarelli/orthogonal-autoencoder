@@ -1,5 +1,4 @@
 # Orthogonal autoencoder for anomaly detection
-
 Model used in the paper "A novel fault detection and diagnosis approach based on orthogonal autoencoders". 
 
 The full paper is available [here](https://www.sciencedirect.com/science/article/pii/S0098135422001910).
