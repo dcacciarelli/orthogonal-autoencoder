@@ -44,31 +44,9 @@ plt.show()
 
 # Computing integrated gradients of the encoder network
 base = x1.mean(axis=0)
-example = x2[0]
+example = x2[23]
 int_grads_tr, _ = get_integrated_gradients(model=trained_model, inp=example, baseline=base, steps=20)
 int_grads_mc, _ = get_integrated_gradients_mc(model=trained_model, inp=example, baseline=base, samples=100)
-
-
-def create_grouped_bar_plot(group_labels, **kwargs):
-    bar_width = 0.15
-    num_groups = len(kwargs)
-
-    # Create a bar plot
-    fig, ax = plt.subplots()
-    x = np.arange(len(group_labels))
-    i = 0
-    for key, value in kwargs.items():
-        ax.bar(x + i*bar_width - (num_groups-1)/2*bar_width, value, bar_width, label=key)
-        i += 1
-
-    # Add labels and a legend
-    ax.set_ylabel('IG Values')
-    ax.axhline(y=0, c="k", lw=0.5)
-    ax.set_xticks(x)
-    ax.set_xticklabels(group_labels, rotation=45)
-    ax.legend()
-
-    plt.show()
 
 # Plotting integrated gradients
 create_grouped_bar_plot(df_train.columns, Trapezoidal=int_grads_tr, Monte_Carlo=int_grads_mc)
