@@ -30,8 +30,8 @@ class OrthogonalAutoEncoder(nn.Module):
         for i in range(len(decoding_layers) - 1):
             decoding.append(nn.Linear(decoding_layers[i], decoding_layers[i + 1]))
             decoding.append(nn.Dropout(dropout))
-            decoding.append(nn.BatchNorm1d(decoding_layers[i + 1]))
             decoding.append(activation_function)
+            decoding.append(nn.BatchNorm1d(decoding_layers[i + 1]))
 
         self.encoder = nn.Sequential(*encoding)
         self.decoder = nn.Sequential(*decoding)
