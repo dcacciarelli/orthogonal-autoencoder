@@ -6,6 +6,7 @@ The full paper is available [here](https://www.sciencedirect.com/science/article
 
 This repo contains:
 1. `model`: torch implementation of a simple feed-forward autoencoder.
-2. `training_utils`: functions for training the model using the orthogonality regularization.
+2. `training`: class with methods useful to train the model using the orthogonality regularization.
 3. `gradients`: functions to estimate the integrated gradients given a trained model, an input tensor and a baseline. The integrated gradients function is       implemented using two different approximation methods (trapezoidal and Monte Carlo).
-4. `training.ipynb`: notebook showing how to use the previous methods with an open source dataset.
+4. `utils`: extra functions (e.g., plots).
+5. `tutorial.ipynb`: notebook showing how to use the previous methods with an open source dataset.
